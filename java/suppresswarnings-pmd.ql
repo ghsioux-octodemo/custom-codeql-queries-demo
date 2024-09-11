@@ -1,5 +1,3 @@
-import java
-
 /**
  * @name Detect @SuppressWarnings("PMD")
  * @description This query detects the usage of @SuppressWarnings("PMD") annotation.
@@ -7,6 +5,8 @@ import java
  * @problem.severity warning
  * @id java/suppress-warnings-pmd
  */
+
+import java
 
 class SuppressWarningsPMD extends Annotation {
   SuppressWarningsPMD() {
