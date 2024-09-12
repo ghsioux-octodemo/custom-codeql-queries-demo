@@ -12,10 +12,10 @@
 
 import java
 
-Element elementNamedEnum() {
+Element elementNamedToto() {
   result.(CompilationUnit).getPackage().getName().regexpMatch("(.*\\.|)toto(\\..*|)") or
   result.getName() = "toto"
 }
 
-select elementNamedEnum(),
+select elementNamedToto(),
   "Code using 'toto' as an identifier is a bad practice."
