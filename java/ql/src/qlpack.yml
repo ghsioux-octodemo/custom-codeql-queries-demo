@@ -3,9 +3,5 @@ library: false
 warnOnImplicitThis: false
 name: ghsioux-octodemo/custom-codeql-queries-demo
 version: 0.0.1
-groups:
-  - java
-  - queries
-extractor: java
 dependencies:
-  codeql/java-all: ^0.0.2
+  codeql/java-all: ^1.1.4
