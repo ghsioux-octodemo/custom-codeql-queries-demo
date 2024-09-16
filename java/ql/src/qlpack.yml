@@ -7,3 +7,5 @@ groups:
   - java
   - queries
 extractor: java
+dependencies:
+  codeql/java-all: ^0.0.2
