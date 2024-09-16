@@ -6,14 +6,10 @@
  * @id java/suppress-warnings-pmd
  */
 
-import java
+ import java
 
-class SuppressWarningsPMD extends Annotation {
-  SuppressWarningsPMD() {
-    this.getType().hasQualifiedName("java.lang", "SuppressWarnings") and
-    this.getValue().toString().matches("\"PMD\"")
-  }
-}
-
-from SuppressWarningsPMD annotation
-select annotation, "Usage of @SuppressWarnings(\"PMD\") detected."
+ from Annotation ann, AnnotationType anntp
+ where anntp = ann.getType() 
+     and anntp.hasQualifiedName("java.lang", "SuppressWarnings")
+     and ann.getValue("value").(CompileTimeConstantExpr).getStringValue().toUpperCase() = "PMD"
+ select ann, "Avoid removing PMD warnings, or document clearly why they are not applicable."
